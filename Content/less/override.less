@@ -570,7 +570,7 @@ li.active {
   display: inline-block;
   width: 90% !important;
   min-height: 250px;
-  padding: 5px;
+  padding: 30px 5px 20px 5px;
   float: left;
   &.full-width {
     @media @widthMediumLarge {
@@ -579,6 +579,11 @@ li.active {
     @media @widthLarge {
       width: 95% !important;
     }
+  }
+  &.title-panel {
+    min-height: 50px;
+    padding: 20px;
+    margin: 20px auto 10px 30px;
   }
 }
 
@@ -604,7 +609,7 @@ li.active {
     }
     padding-left: 40px;
     position: relative;
-    left: 220px;
+    left: 240px;
     margin-top: 10px;
     display: inline-block;
     font: @form-header-font;
@@ -673,7 +678,7 @@ li.active {
 .form-head-icon {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 3px;
   width: 25px;
   background-color: @top-bar-colour;
   margin-right: 10px;
@@ -695,11 +700,11 @@ li.active {
     font: @form-header-font-small;
     font-weight: bold;
     max-width: 25%;
-    left: 150px;
+    left: 230px;
   }
 }
 
-.cr-id {
+.facility-id {
   display: inline-block;
   color: @black;
   font-size: 16px;
@@ -726,6 +731,51 @@ li.active {
 .facility-details:before {
   content: '\A';
 }
+
+// facility details panel
+
+.form-title-group {
+  span {
+    line-height: 10px;
+  }
+  padding-left: 5px;
+  position: relative;
+  left: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  font: @form-header-font;
+  font-weight: bold;
+}
+.form-head-icon {
+  position: absolute;
+  left: -30px;
+  top: -2px;
+  width: 25px;
+  background-color: @top-bar-colour;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+.facility-address {
+  color: @grey-dark;
+  font-size: 14px;
+  white-space: pre;
+  line-height: 8px !important;
+  font-weight: regular;
+  text-align: right;
+}
+.facility-geo {
+  display: inline-block;
+  color: @grey-dark;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 20px;
+  white-space: pre;
+  line-height: 8px !important;
+  text-align: right;
+}
+
+
 
 // qtip styling
 .qtip {
