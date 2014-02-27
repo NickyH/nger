@@ -4,7 +4,14 @@ $(function(){
   disable_datepickers();
   $( '.form-horizontal .container' ).parsley( 'validate');
   $('.selectpicker').selectpicker({ size: 5 });
+  $('.activity-table-search').on('keyup', get_val_table_ID);
 });
+
+function get_val_table_ID () {
+  var thisObj = $(this).children('input');
+  var tableID = $(this).parents('form').children('table').attr('id');
+  table_search(thisObj, tableID);
+}
 
 function insert_facility_details_form() {
   $('#insert-form').empty();
