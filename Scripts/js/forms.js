@@ -1,14 +1,21 @@
 
-add_cross_to_required_forms();
-disable_datepickers();
-$('.form-horizontal').on('keyup', this, check_panel_valid);
-$('.form-horizontal').on('change', this, check_panel_valid);
-$( '.form-horizontal .container' ).parsley( 'validate');
-$('.selectpicker').selectpicker({ size: 5 });
+//dom ready functions
+$(function(){
+  disable_datepickers();
+  $( '.form-horizontal .container' ).parsley( 'validate');
+  $('.selectpicker').selectpicker({ size: 5 });
+});
 
 function insert_facility_details_form() {
   $('#insert-form').empty();
   $.get('../forms/form_facilitydetails.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
+function insert_activity_data_form() {
+  $('#insert-form').empty();
+  $.get('../forms/form_activitydata.html', function(data) {
     $('#insert-form').html(data);
   });
 }
@@ -32,73 +39,6 @@ function select_none() {
 $("input[type='text']").on("click", function () {
   $(this).select();
 });
-
-function add_cross_to_required_forms() {
-  var required;
-  var ovalName;
-  var change_oval_colour;
-  var allPanels = $('.form-horizontal');
-  $(allPanels).each(function() {
-    required = false
-      $(this).find('.form-control').each(function() {
-        if ($(this).attr('data-required')) {
-          required = true
-        }
-      });
-    if (required) {
-      $(this).find('.insert-cross-icon').addClass('glyphicon-remove panel-cross');
-      toggle_oval_colour( $(this), 'incomplete' );
-      toggle_panel_num_colour( $(this), 'incomplete' );
-    }
-  });
-}
-
-function check_panel_valid() {
-  if ($(this).children('.form-group').find('.search')) {
-    var tableID = $(this).children('.form-group').find('.search').parents('.form-horizontal').children('table').attr('id');
-    var thisObj = $(this).children('.form-group').find('.search');
-    table_search(thisObj, tableID);
-  }
-  var icon = $(this).children().last();
-  var rowValid = false;
-  var panelValid = $(this).parsley( 'isValid' );
-  var required = check_this_panel_required( $(this) );
-  if (panelValid && required ) {
-    $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-ok panel-ok');
-    toggle_panel_num_colour( (this), 'complete' );
-    $(this).parent().parent().parent().find('.form-panel').each(function() {
-      if (!$(this).children('form').parsley('isValid')) {
-        rowValid = false;
-        return rowValid
-      }
-      else {
-        rowValid = true;
-      }
-    });
-
-    if (rowValid) {
-      toggle_oval_colour( (this), 'complete' );
-    }
-  }
-
-  if (panelValid === false) {
-    $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-remove panel-remove');
-    toggle_panel_num_colour( $(this), 'incomplete' );
-  }
-}
-
-function toggle_panel_num_colour( thisObj, className) {
-  $(thisObj).parent().find('.text-circle').removeClass('incomplete complete').addClass(className);
-}
-
-function toggle_oval_colour( thisObj, className) {
-  $(thisObj).parent().find('.text-circle').removeClass('incomplete complete').addClass(className);
-  ovalName = '#' + $(thisObj).parents("div[id^='bookmark_']" ).attr('id');
-  change_oval_colour = $("[data-href=" + ovalName + "]");
-  if ($(change_oval_colour).attr('data-href') === ovalName ) {
-    $(change_oval_colour).children('div').removeClass('incomplete complete').addClass(className);
-  }
-}
 
 function disable_datepickers() {
   $('.input-group-addon').each( function() {
@@ -136,19 +76,6 @@ function table_search(thisObj, tableID) {
       return !reg.test(text);
   }).hide();
   $('thead tr').show();
-}
-
-function check_this_panel_required(thisObj) {
-  var thisPanel = $(thisObj);
-  var required = false
-  $(thisPanel).each(function() {
-    $(this).find('.form-control').each(function() {
-      if ($(this).attr('data-required')) {
-        required = true
-        }
-      });
-    });
-  return required;
 }
 
 // datetimepicker
