@@ -27,6 +27,20 @@ function insert_activity_data_form() {
   });
 }
 
+function insert_subcontract_data_form() {
+  $('#insert-form').empty();
+  $.get('../forms/form_subcontractdata.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
+function insert_report_form() {
+  $('#insert-form').empty();
+  $.get('../forms/form_report.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
 $('.select-all').on('click', function() {
   $(this).parent('.col-sm-8').children('.selectpicker').selectpicker('selectAll');
 });
