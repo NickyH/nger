@@ -7,6 +7,21 @@ $(function(){
   $('.activity-table-search').on('keyup', get_val_table_ID);
 });
 
+function toggle_tab_year() {
+  $('ul.nav-tabs.year li.active').removeClass('active');
+  $(this).parent('li').addClass('active');
+}
+
+function toggle_tab_period() {
+  $('ul.nav-tabs.period li.active').removeClass('active');
+  $(this).parent('li').addClass('active');
+}
+
+function toggle_tab_category() {
+  $('ul.nav-tabs.category li.active').removeClass('active');
+  $(this).parent('li').addClass('active');
+}
+
 function get_val_table_ID () {
   var thisObj = $(this).children('input');
   var tableID = $(this).parents('form').children('table').attr('id');
