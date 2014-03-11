@@ -937,9 +937,27 @@ li.active {
     width: 200px;
     background-color: @top-bar-colour;
     list-style: none;
-    border-bottom: 1px solid @grey-darker;
+    border-bottom: 1px solid @top-bar-colour;
     margin-top: 5px;
     text-align: left;
+    &.second {
+      background-color: lighten(@top-bar-colour, 8%);
+      border-bottom: 1px solid @left-bar-colour;
+      a {
+        margin-left: 10px;
+      }
+    }
+    &.third {
+      background-color: lighten(@top-bar-colour, 18%);
+      border-bottom: 1px solid @left-bar-colour;
+      a {
+        margin-left: 20px;
+      }
+    }
+    &.layer {
+      border-bottom: none;
+      background-color: @left-bar-colour;
+    }
     a {
       color: @white;
       text-decoration: none;
