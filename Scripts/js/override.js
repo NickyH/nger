@@ -41,6 +41,13 @@ function insert_manage_users() {
   });
 }
 
+// function toggle_all_facilities() {
+//  $('#selectAll').click(function(e){
+//     var table= $($(this).target).closest('table');
+//     $('td input:checkbox',table).prop('checked',this.checked);
+// });
+// }
+
 function nav_button_hover() {
   $(this).addClass('nav-hover');
 }

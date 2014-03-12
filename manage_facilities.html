@@ -72,7 +72,7 @@
                       <th class="tbl-ID">ID</th>
                       <th class="tbl-name">Name</th>
                       <th class="tbl-division">Division</th>
-                      <th class="tbl-visible">Visible</th>
+                      <th class="tbl-visible"><input type="checkbox" class="form-control" id="select-all-facilities"></th>
                     </tr>
                   </thead>
 
@@ -199,4 +199,9 @@
   $('ul.nav-tabs.period li a').on('click', toggle_tab_period);
   $('ul.nav-tabs.category li a').on('click', toggle_tab_category);
   $('.time-header').on('click', toggle_time_group);
+
+  $('#select-all-facilities').click(function(e){
+    var table= $(e.target).closest('table');
+    $('td input:checkbox',table).prop('checked',this.checked);
+  });
 </script>
