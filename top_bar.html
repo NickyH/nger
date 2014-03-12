@@ -20,10 +20,10 @@
             </div>
           </button>
           <button type="button" class="btn btn-default">
-            <a class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-users.png"> Users </a>
+            <a id="manage-users" class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-users.png"> Users </a>
           </button>
           <button type="button" class="btn btn-default">
-            <a class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-facilities.png"> Facilities </a>
+            <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-facilities.png"> Facilities </a>
           </button>
           <button type="button" class="btn btn-default">
             <div class="dropdown">
@@ -50,4 +50,6 @@
 <script>
 $('.btn-group.nger button').on('mouseover', nav_button_hover);
 $('.btn-group.nger button').on('mouseleave', nav_button_leave);
+$('#manage-facilities').on('click', insert_manage_facilities);
+$('#manage-users').on('click', insert_manage_users);
 </script>

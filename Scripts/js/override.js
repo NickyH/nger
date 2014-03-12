@@ -18,14 +18,27 @@ function login() {
 }
 
 function toggle_time_group() {
- var trs = $(this).parent('tr').nextUntil('tr:has(.time-header)');
- if ($(trs).hasClass('hidden')) {
-  $(trs).removeClass('hidden').slideDown(500);
- }
- else {
-   $(trs).addClass('hidden').slideUp(500);
- }
+   var trs = $(this).parent('tr').nextUntil('tr:has(.time-header)');
+   if ($(trs).hasClass('hidden')) {
+    $(trs).removeClass('hidden').slideDown(500);
+   }
+   else {
+     $(trs).addClass('hidden').slideUp(500);
+   }
+}
 
+function insert_manage_facilities() {
+  $('#insert-form').empty();
+  $.get('../manage_facilities.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
+function insert_manage_users() {
+  $('#insert-form').empty();
+  $.get('../manage_users.html', function(data) {
+    $('#insert-form').html(data);
+  });
 }
 
 function nav_button_hover() {

@@ -710,6 +710,29 @@ li.active {
   }
 }
 
+.form-column {
+    .form-button {
+    float: right;
+    height: 40px;
+    min-width: 160px;
+    -webkit-border-radius: 20px;
+    box-shadow: 2px 2px 2px @grey-medium;
+    -webkit-box-shadow: 2px 2px 2px @grey-medium;
+    border: 1px solid @grey-medium;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font: @form-button-font;
+    color: @white;
+    &.save-button {
+    background-color: @save-button-colour;
+    letter-spacing: 2px;
+    }
+  }
+}
+
 .facility-details {
   color: @grey-dark;
   font-size: 16px;
@@ -932,6 +955,81 @@ li.active {
   font-weight: bold;
   text-align: center;
   cursor: pointer;
+}
+
+.facility-list-table {
+  .form-control {
+    height: 28px !important;
+    margin-top: 5px;
+  }
+  .text {
+    margin-top: 10px;
+    &.glyphicon {
+      text-indent: 20%;
+    }
+  }
+  tr{
+    height: 35px;
+  }
+  .tbl-edit {
+  width: 5%;
+  }
+  .tbl-ID {
+    width: 5%;
+  }
+  .tbl-name {
+    width: auto;
+  }
+  .tbl-division {
+    width: 40%;
+  }
+  .tbl-visible {
+    width: 5%;
+  }
+}
+
+.user-list-table {
+  .form-control {
+    height: 28px !important;
+    margin-top: 5px;
+  }
+  .text {
+    margin-top: 10px;
+    &.glyphicon {
+      text-indent: 20%;
+    }
+    a .glyphicon {
+      margin-right: 15%;
+      margin-right: 5%;
+    }
+  }
+  tr{
+    height: 35px;
+  }
+  .tbl-edit {
+  width: 5%;
+  }
+  .tbl-username {
+    width: 15%;
+  }
+  .tbl-email {
+    width: 26%;
+  }
+  .tbl-locked {
+    width: 7%;
+  }
+  .tbl-online {
+    width: 7%;
+  }
+  .tbl-lastlogin {
+    width: 10%;
+  }
+  .tbl-comment {
+    width: 20%;
+  }
+  .tbl-options {
+    width: 10%;
+  }
 }
 
 .item {
