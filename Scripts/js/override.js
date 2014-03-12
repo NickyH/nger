@@ -5,6 +5,17 @@ $(function(){
   insert_main();
 });
 
+function toggle_time_group() {
+ var trs = $(this).parent('tr').nextUntil('tr:has(.time-header)');
+ if ($(trs).hasClass('hidden')) {
+  $(trs).removeClass('hidden').slideDown(500);
+ }
+ else {
+   $(trs).addClass('hidden').slideUp(500);
+ }
+
+}
+
 function insert_main() {
   $('#insert-form').empty();
   $.get('../forms/form_home.html', function(data) {

@@ -1,5 +1,12 @@
 @import "globals.less";
 
+/* commented backslash hack \*/
+html, body{
+  height:100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: @white-medium;
   font-family: @font-family-main;
@@ -298,6 +305,7 @@ li.active {
 
 //left bar
 .left-bar {
+  -ms-overflow-style: none;/*auto | none | scrollbar | -ms-autohiding-scrollbar*/
   width: @left-bar-width;
   background : @left-bar-colour;
   position: fixed;
@@ -918,17 +926,19 @@ li.active {
 
 .time-header {
   background-color: lighten(@form-highlight-colour, 20%) !important;
+  border-bottom: 1px solid @form-highlight-colour;
   font-size: 14px;
   text-indent: 20px;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 }
 
 .item {
   width: 100%;
   display: block !important;
-  height: 100%;
-  overflow: auto;
+  height: 90%;
+  overflow-y: none;
   font-weight: bold;
   ul {
     background-color: @left-bar-colour;
@@ -1393,11 +1403,17 @@ span.lookup:hover {
   }
 }
 
-//history panel accordion
+#menu-tree {
+  height: 100%;
+}
+
+//menu panel accordion
 #accordion-menu {
-  height: 600px;
+  padding: 0;
+  height: 90%;
   overflow: scroll;
-  width: 400px;
+  overflow-x: hidden;
+  width: 200px;
   border-radius: 5px;
   margin-left: 10px;
   margin-top: 100px;
