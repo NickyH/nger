@@ -1,9 +1,21 @@
 //dom ready functions
 $(function(){
-  insert_left();
+  insert_login()
   insert_top();
-  insert_main();
 });
+
+function insert_login() {
+  $('#insert-form').empty();
+  $.get('../login.html', function(data) {
+    $('#insert-form').html(data);
+  });
+}
+
+function login() {
+  $('#insert-form').empty();
+  insert_left();
+  $('.btn-group.nger').removeClass('hidden');
+}
 
 function toggle_time_group() {
  var trs = $(this).parent('tr').nextUntil('tr:has(.time-header)');
@@ -14,13 +26,6 @@ function toggle_time_group() {
    $(trs).addClass('hidden').slideUp(500);
  }
 
-}
-
-function insert_main() {
-  $('#insert-form').empty();
-  $.get('../forms/form_home.html', function(data) {
-    $('#insert-form').html(data);
-  });
 }
 
 function nav_button_hover() {
@@ -153,27 +158,4 @@ function insert_top() {
     $('#insert-top').html(data);
   });
   $('#insert-top').trigger('create');
-}
-
-function refresh_map()
-{
-  window.location = ('index.html');
-}
-
-$(function() {
-  $("#map-link").on('click', refresh_map);
-});
-
-function show_fake_map() {
-  $('#mapstatic').attr('src', "Content/images/OsmMap_Feature.png")
-  $('.qtip-layers-panel').qtip('api').hide();
-}
-
-// inserts the first form into the form page on initial load of details page
-function show_first_form() {
-  $.get('forms/form_cr.html', function(data) {
-    $('#insert-form').html(data);
-    });
-  $('#insert-form').trigger('create');
-  window.location = ('form.html'); //initial refresh
 }

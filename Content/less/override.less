@@ -1439,3 +1439,29 @@ span.lookup:hover {
   top: 5px;
   right: -56px;
 }
+
+//login
+
+li.active {
+  margin-bottom: 20px;
+  min-width: 158px;
+  a.pill-select {
+    &.inactive {
+      background-color: @white-medium;
+      color: black;
+      border: 1px solid @grey-medium;
+    }
+  }
+  a.login-select {
+    &.inactive {
+      background-color: @save-button-colour;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid @grey-medium;
+    }
+  }
+  a.login-select:hover {
+    background-color: lighten(@save-button-colour, 5%);
+  }
+}
