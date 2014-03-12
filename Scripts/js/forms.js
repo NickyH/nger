@@ -5,6 +5,7 @@ $(function(){
   $( '.form-horizontal .container' ).parsley( 'validate');
   $('.selectpicker').selectpicker({ size: 5 });
   $('.activity-table-search').on('keyup', get_val_table_ID);
+  $('.activity-table-search').on('keyup', get_val_facility_table_ID);
 });
 
 function toggle_tab_year() {
@@ -26,6 +27,13 @@ function get_val_table_ID () {
   var thisObj = $(this).children('input');
   var tableID = $(this).parents('form').children('table').attr('id');
   table_search(thisObj, tableID);
+}
+
+function get_val_facility_table_ID () {
+  var thisObj = $(this).children('input');
+  var tableID = $(this).parents('form').children('table').attr('id');
+  var column = $(this).children('input').attr('class');
+  search_facility_list(thisObj, tableID, column);
 }
 
 function insert_facility_details_form() {
@@ -109,6 +117,21 @@ function table_search(thisObj, tableID) {
 
   $rows.show().filter(function() {
       text = $(this).text().replace(/\s+/g, ' ');
+      return !reg.test(text);
+  }).hide();
+  $('thead tr').show();
+}
+
+function search_facility_list(thisObj, tableID, column) {
+  var $rows = $("#"+tableID+" tr");
+  var col = column;
+  var val = '^(?=.*\\b' + $.trim($(thisObj).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+      reg = RegExp(val, 'i'),
+      text;
+
+  $rows.show().filter(function() {
+      text = $(this).children('td.'+col).text().replace(/\s+/g, ' ');
+      console.log(text);
       return !reg.test(text);
   }).hide();
   $('thead tr').show();
