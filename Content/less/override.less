@@ -162,9 +162,15 @@ li.active {
   width: 25px;
 }
 
+.icon-accordion {
+  width: 15px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
 .btn-group.nger {
   margin-right: 50px;
-  button {
+  div.btn {
     background-color: @top-bar-colour;
     border-color: @top-bar-colour !important;
     font-size: 16px;
@@ -1075,7 +1081,7 @@ li.active {
       background-color: lighten(@top-bar-colour, 18%);
       border-bottom: 1px solid @left-bar-colour;
       a {
-        margin-left: 20px;
+        margin-left: 3px;
       }
     }
     &.layer {
@@ -1532,6 +1538,29 @@ span.lookup:hover {
   margin-left: 10px;
   margin-top: 100px;
 }
+
+//operational control radio boxes
+
+.item li {
+  &.op-control {
+    background-color: @left-bar-colour;
+    font-size: 14px;
+    .header {
+      display: block;
+      top: 0;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    input {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    label {
+      margin-right: 15px;
+    }
+  }
+}
+
 
 .cb_slide_panel a.close {
   background: url("../images/icons/icon-history-small-white.png") @grey-darker no-repeat !important;

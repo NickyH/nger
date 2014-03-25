@@ -6,7 +6,7 @@
 
         <div class="btn-group nger hidden">
 
-          <button type="button" class="btn btn-default">
+          <div type="button" class="btn btn-default">
             <div class="dropdown">
               <div class="dropdown-toggle" data-toggle="dropdown">
                 <a class="nav-link" href="#">
@@ -18,14 +18,14 @@
                 </ul>
               </a>
             </div>
-          </button>
-          <button type="button" class="btn btn-default">
+          </div>
+          <div type="button" class="btn btn-default">
             <a id="manage-users" class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-users.png"> Users </a>
-          </button>
-          <button type="button" class="btn btn-default">
+          </div>
+          <div type="button" class="btn btn-default">
             <a id="manage-facilities" class="nav-link" href="#"><img class="menu-icon" src="../Content/images/icons/icon-facilities.png"> Facilities </a>
-          </button>
-          <button type="button" class="btn btn-default">
+          </div>
+          <div type="button" class="btn btn-default">
             <div class="dropdown">
               <div class="dropdown-toggle" data-toggle="dropdown">
                 <a class="nav-link" href="#">
@@ -39,7 +39,7 @@
                 </ul>
               </a>
             </div>
-          </button>
+          </div>
 
         </div>
 
@@ -48,8 +48,8 @@
 </div>
 
 <script>
-$('.btn-group.nger button').on('mouseover', nav_button_hover);
-$('.btn-group.nger button').on('mouseleave', nav_button_leave);
+$('.btn-group.nger .btn').on('mouseover', nav_button_hover);
+$('.btn-group.nger .btn').on('mouseleave', nav_button_leave);
 $('#manage-facilities').on('click', insert_manage_facilities);
 $('#manage-users').on('click', insert_manage_users);
 </script>
