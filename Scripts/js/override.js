@@ -4,6 +4,11 @@ $(function(){
   insert_top();
 });
 
+function clear_saved_state() {
+  console.log('clear');
+
+}
+
 function insert_login() {
   $('#insert-form').empty();
   $.get('../login.html', function(data) {

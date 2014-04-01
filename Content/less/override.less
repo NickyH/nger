@@ -1,11 +1,5 @@
 @import "globals.less";
 
-/* commented backslash hack \*/
-html, body{
-  height:100%;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   background-color: @white-medium;
@@ -566,9 +560,9 @@ li.active {
   background-color: @form-background-colour-light;
 }
 
-.container {
-  max-width: 1500px !important;
-}
+// .container {
+//   max-width: 1500px !important;
+// }
 
 .container-fluid {
   &.form-container {
@@ -1607,4 +1601,10 @@ li.active {
   a.login-select:hover {
     background-color: lighten(@save-button-colour, 5%);
   }
+}
+
+.map {
+  width: 100%;
+  height: 200px;
+  border: 1px solid grey;
 }

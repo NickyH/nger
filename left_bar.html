@@ -4080,7 +4080,10 @@
     </div>
 
   <script>
-  $(function(){ $('#accordion-menu').dcAccordion(); });
+  $(function(){ $('#accordion-menu').dcAccordion({
+    saveState: false
+  }); });
+  $('.header').on('click', clear_saved_state);
   $('.link.facility').on('click', insert_facility_details_form);
   $('.link.activity').on('click', insert_activity_data_form);
   $('.link.subcontract').on('click', insert_subcontract_data_form);
